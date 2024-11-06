@@ -19,7 +19,7 @@
     ports:
         - "8080:8080"
     env:
-        MONGO: "{{ lookup('hashi_vault', 'roboshop-{{env}}/data/user:CATALOGUE_HOST token={{ vault_token }} url=http://vault-internal.rdevopsb81.online:8200')}}"
+        MONGO: "{{ lookup('hashi_vault', 'roboshop-{{env}}/data/user:MONGO token={{ vault_token }} url=http://vault-internal.rdevopsb81.online:8200')}}"
         MONGO_URL: "{{ lookup('hashi_vault', 'roboshop-{{env}}/data/user:MONGO_URL token={{ vault_token }} url=http://vault-internal.rdevopsb81.online:8200')}}"
         REDIS_URL: "{{ lookup('hashi_vault', 'roboshop-{{env}}/data/user:REDIS_URL token={{ vault_token }} url=http://vault-internal.rdevopsb81.online:8200')}}"
 
